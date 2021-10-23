@@ -12,16 +12,19 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 import com.demoqa.paginas.BasePage;
 import com.demoqa.paginas.FormularioPage;
+import com.demoqa.paginas.MenuPage;
 
 public class BaseTest {
 	WebDriver webDriver;
 	FormularioPage formularioPage;
+	MenuPage menuPage;
 
 	@Before
 	public void setUp() throws Exception {
 		System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") + "\\webdriver\\msedgedriver.exe");
 		webDriver = new EdgeDriver();
 		formularioPage = new FormularioPage(webDriver);
+		menuPage = new MenuPage(webDriver);
 		webDriver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		formularioPage.abrirPagina("https://demoqa.com/");
 		formularioPage.maximizarPagina();
