@@ -6,7 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import com.demoqa.utils.ITextPdf;
+
 public class MenuPage extends BasePage{
+	ITextPdf menuPdf = new ITextPdf();
 
 	public MenuPage(WebDriver driver) {
 		super(driver);
@@ -33,18 +36,24 @@ public class MenuPage extends BasePage{
 	
 	public void passarMouseEmMainItem2() {
 		Actions action = new Actions(driver);
-		WebElement we = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[2]/a"));
+		WebElement we = driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/a"));
 		action.moveToElement(we).build().perform();
+		System.out.println("to aqui");
 	}
 	
 	public void passarMouseEmSubSubList() {
 		Actions action = new Actions(driver);
 		WebElement we = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[2]/ul/li[3]/a"));
 		action.moveToElement(we).build().perform();
+		System.out.println("to aqui");
 	}
 	
 	public void clicarEmSubSubItem2() {
 		driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[2]/ul/li[3]/ul/li[2]/a")).click();
+	}
+	
+	public void gerarPdf() throws Exception {
+		menuPdf.iTextPdf();
 	}
 	
 

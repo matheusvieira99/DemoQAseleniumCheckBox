@@ -9,17 +9,20 @@ import org.junit.Test;
 import com.demoqa.paginas.MenuPage;
 
 public class MenuTest extends BaseTest {
-	//menuPage = new MenuPage(webDriver);
 
 
 	@Test
-	public void test() {
+	public void test() throws Exception {
 		menuPage.irParaWidgets();
+		menuPage.tirarScreenshotMenu1();
 		menuPage.rolarBarraAteOMenu();
 		menuPage.irParaOMenu();
+		menuPage.tirarScreenshotMenu2();
 		menuPage.passarMouseEmMainItem2();
-		menuPage.passarMouseEmSubSubList();
-		menuPage.clicarEmSubSubItem2();
+		//menuPage.passarMouseEmSubSubList();
+		//menuPage.clicarEmSubSubItem2();
+		menuPage.tirarScreenshotMenu3();
+		menuPage.gerarPdf();
 	}
 
 }
