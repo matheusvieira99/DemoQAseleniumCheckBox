@@ -11,7 +11,7 @@ public class ITextPdf {
 	
 	public void iTextPdf() throws Exception {
 		
-		String file = "C:\\Users\\Matheus\\Desktop\\projects\\DemoQA\\target\\ValidarMenu.pdf";
+		String file = System.getProperty("user.dir") + "\\target\\ValidarMenu.pdf";
 		Document doc = new Document();
 		PdfWriter.getInstance(doc, new FileOutputStream(file));
 		
