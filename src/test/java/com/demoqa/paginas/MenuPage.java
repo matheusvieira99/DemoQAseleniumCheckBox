@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import com.demoqa.utils.ITextPdf;
 
 public class MenuPage extends BasePage{
-	ITextPdf menuPdf = new ITextPdf();
+	ITextPdf menuPdf;
 
 	public MenuPage(WebDriver driver) {
 		super(driver);
@@ -24,6 +24,7 @@ public class MenuPage extends BasePage{
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("arguments[0].scrollIntoView(true)", element);
 		jse.executeScript("scrollBy(0, 150)");
+		//System.out.println(nomePasso);
 //		Actions actions = new Actions(driver);
 //		actions.moveToElement(element);
 //		actions.perform();
@@ -32,29 +33,32 @@ public class MenuPage extends BasePage{
 	
 	public void irParaOMenu() {
 		driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[1]/div/div/div[4]/div/ul/li[8]")).click();
+		
 	}
 	
 	public void passarMouseEmMainItem2() {
 		Actions action = new Actions(driver);
 		WebElement we = driver.findElement(By.xpath("//*[@id=\"nav\"]/li[2]/a"));
 		action.moveToElement(we).build().perform();
-		System.out.println("to aqui");
+		//System.out.println(nomePasso);
+		//System.out.println("to aqui");
 	}
 	
 	public void passarMouseEmSubSubList() {
 		Actions action = new Actions(driver);
 		WebElement we = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[2]/ul/li[3]/a"));
 		action.moveToElement(we).build().perform();
-		System.out.println("to aqui");
+		//System.out.println("to aqui");
 	}
 	
 	public void clicarEmSubSubItem2() {
 		driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[1]/ul/li[2]/ul/li[3]/ul/li[2]/a")).click();
 	}
 	
-	public void gerarPdf() throws Exception {
-		menuPdf.iTextPdf();
-	}
+//	public void gerarPdf() throws Exception {
+//		menuPdf = new ITextPdf(driver);
+//		menuPdf.iTextPdf();
+//	}
 	
 
 }

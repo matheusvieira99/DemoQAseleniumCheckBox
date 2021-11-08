@@ -1,28 +1,30 @@
 package com.demoqa.tests;
 
-import static org.junit.Assert.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
-import com.demoqa.paginas.MenuPage;
+import com.itextpdf.text.Phrase;
 
 public class MenuTest extends BaseTest {
 
 
 	@Test
 	public void test() throws Exception {
+		//menuPdf.nomePasso = nomePasso;
 		menuPage.irParaWidgets();
-		menuPage.tirarScreenshotMenu1();
+		menuPdf.tirarScreenshot("Ir para widgets");
+		//menuPage.tirarScreenshot(String 1- Ir para menu 1.png, String nomePasso);
 		menuPage.rolarBarraAteOMenu();
 		menuPage.irParaOMenu();
-		menuPage.tirarScreenshotMenu2();
+		menuPdf.tirarScreenshot("Ir para o menu");
 		menuPage.passarMouseEmMainItem2();
 		//menuPage.passarMouseEmSubSubList();
 		//menuPage.clicarEmSubSubItem2();
-		menuPage.tirarScreenshotMenu3();
-		menuPage.gerarPdf();
+		menuPdf.tirarScreenshot("Passar o mouse em main item 2");
+		menuPdf.gerarPdf("validacao");
 	}
 
 }
