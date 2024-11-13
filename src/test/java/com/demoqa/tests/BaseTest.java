@@ -1,6 +1,5 @@
 package com.demoqa.tests;
 
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -17,7 +16,6 @@ public class BaseTest {
 	FormularioPage formularioPage;
 	MenuPage menuPage;
 	ITextPdf menuPdf;
-	//public ArrayList<String> nomePasso = new ArrayList<>();
 
 	@Before
 	public void setUp() throws Exception {
@@ -25,13 +23,11 @@ public class BaseTest {
 		webDriver = new EdgeDriver();
 		formularioPage = new FormularioPage(webDriver);
 		menuPdf = new ITextPdf(webDriver);
-		//menuPdf.iTextPdf();
 		menuPage = new MenuPage(webDriver);
 		webDriver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		formularioPage.abrirPagina("https://demoqa.com/");
 		formularioPage.maximizarPagina();
 		formularioPage.rolarBarra();
-		//menuPdf.nomePasso = this.nomePasso;
 	}
 
 	@After

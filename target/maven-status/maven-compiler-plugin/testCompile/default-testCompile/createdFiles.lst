@@ -1,0 +1,7 @@
+com\demoqa\tests\BaseTest.class
+com\demoqa\paginas\MenuPage.class
+com\demoqa\paginas\FormularioPage.class
+com\demoqa\paginas\BasePage.class
+com\demoqa\utils\ITextPdf.class
+com\demoqa\tests\FormularioTest.class
+com\demoqa\tests\MenuTest.class
